@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="Entidades\Category.cs" />
+    <Compile Include="Entidades\Notice.cs" />
     <Compile Include="Migrations\202002171742555_init-migration.cs" />
     <Compile Include="Migrations\202002171742555_init-migration.designer.cs">
       <DependentUpon>202002171742555_init-migration.cs</DependentUpon>
