@@ -1,7 +1,8 @@
 ﻿@model Data.Arcoline.Entidades.Category
+
 @using UI.Arcoline.Helper
 @{
-    ViewBag.Title = "Details";
+    
 }
 
 <div class="bg-body-light">
@@ -47,7 +48,7 @@
 
                     <li class="nav-item ml-auto">
                         <div class="block-options pl-3 pr-2">
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#Modal-add-notice">
                                 <i class="fa fa-plus mr-1"></i>Adicionar noticia
                             </button>
 
@@ -56,13 +57,10 @@
                             </button>
                         </div>
                     </li>
-
                 </ul>
 
                 <div class="block-content tab-content" style="min-height: calc(100vh - 410px);">
-                    <div class="tab-pane active" id="btabswo-static-home" role="tabpanel">
-
-                    </div>
+                    <div class="tab-pane active" id="btabswo-static-home" role="tabpanel"></div>
                 </div>
             </div>
         </div>
@@ -70,3 +68,56 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="Modal-add-notice" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Adicionar Noticia</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            @using (Html.BeginForm("Create", "Notice", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Hidden("IdCategory", Model.IdCategory);
+
+                <div class="modal-body">
+                    <br />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        <label for="Title">Titulo da noticia <span class="text-danger">*</span></label>
+                        @Html.Editor("Title", new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessage("Title", "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Content">Descrição destaque <span class="text-danger">*</span></label>
+                        @Html.Editor("Content", new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                        @Html.ValidationMessage("Content", "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        <label for="FullDescription">Descrição destaque <span class="text-danger">*</span></label>
+                        @Html.TextArea("FullDescription", new { @class = "form-control", required = "required", rows="4" })
+                        @Html.ValidationMessage("FullDescription", "", new { @class = "text-danger" })
+                    </div>
+
+                    
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" value="Create" class="btn-block-option btn-submit">
+                        <i class="si si-check"></i> Adicionar
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->

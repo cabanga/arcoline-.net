@@ -114,12 +114,5 @@ namespace UI.Arcoline.Controllers
             }
         }
 
-
-
-
-
-
-
-
     }
 }

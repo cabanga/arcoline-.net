@@ -47,8 +47,8 @@ namespace Application.Arcoline
                     IdNotice        = Guid.NewGuid(),
                     Title           = new_object.Title,
                     Content         = new_object.Content,
-                    Description     = new_object.Description,
-                    Status          = new_object.Status,
+                    FullDescription = new_object.FullDescription,
+                    Status          = true,
                     Created_at      = DateTime.Now,
                     IdCategory      = new_object.IdCategory,
                 };
@@ -75,8 +75,8 @@ namespace Application.Arcoline
                 {
                     response.Title = edit_object.Title;
                     response.Content = edit_object.Content;
-                    response.Description = edit_object.Description;
-                    response.Status = edit_object.Status;
+                    response.FullDescription = edit_object.FullDescription;
+                    response.Status = true;
                     response.IdCategory = edit_object.IdCategory;
 
                     db.SaveChanges();

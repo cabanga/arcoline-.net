@@ -10,7 +10,7 @@ namespace Data.Arcoline.Entidades
         public Guid IdNotice { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public string Description { get; set; }
+        public string FullDescription { get; set; }
         public bool Status { get; set; }
         public DateTime Created_at { get; set; }
         public Guid IdCategory { get; set; }
