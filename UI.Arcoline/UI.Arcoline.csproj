@@ -352,6 +352,8 @@
     <Content Include="Views\Shared\_SideNavigation.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Arcoline\Application.Arcoline.csproj">

@@ -17,7 +17,7 @@ namespace UI.Arcoline.Controllers
         public ActionResult Details(Guid id)
         {
             var response = _category.GetCategory(id);
-            return View(response);
+            return View(response.Objeto);
         }
 
         public ActionResult Create()
