@@ -1,6 +1,8 @@
 ﻿using Application.Arcoline;
 using Data.Arcoline.Entidades;
 using System;
+using System.IO;
+using System.Web;
 using System.Web.Mvc;
 
 namespace UI.Arcoline.Controllers
@@ -29,8 +31,16 @@ namespace UI.Arcoline.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Notice newObject)
+        public ActionResult Create(Notice newObject, HttpPostedFileBase upload)
         {
+            if (upload != null)
+            {
+                var extension = Path.GetExtension(upload.FileName);
+                var cvName = "NOTICE" + DateTime.Now.ToString("yymmssfff") + extension;
+                upload.SaveAs(HttpContext.Server.MapPath("~/Assets/Storage/NoticesIMG/") + cvName);
+                newObject.Img = cvName;
+            }
+
             var response = _notice.CreateNotice(newObject);
             var notice = (Notice)response.Objeto;
             var IdCategory = newObject.IdCategory;

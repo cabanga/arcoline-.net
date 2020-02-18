@@ -48,7 +48,8 @@ namespace Application.Arcoline
                     Title           = new_object.Title,
                     Content         = new_object.Content,
                     FullDescription = new_object.FullDescription,
-                    Status          = true,
+                    Img             = new_object.Img,
+                    Status = true,
                     Created_at      = DateTime.Now,
                     IdCategory      = new_object.IdCategory,
                 };
@@ -73,11 +74,11 @@ namespace Application.Arcoline
 
                 if (response != null)
                 {
-                    response.Title = edit_object.Title;
-                    response.Content = edit_object.Content;
-                    response.FullDescription = edit_object.FullDescription;
-                    response.Status = true;
-                    response.IdCategory = edit_object.IdCategory;
+                    response.Title              = edit_object.Title;
+                    response.Content            = edit_object.Content;
+                    response.FullDescription    = edit_object.FullDescription;
+                    response.Img                = edit_object.Img;
+                    response.IdCategory         = edit_object.IdCategory;
 
                     db.SaveChanges();
                 }

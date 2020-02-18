@@ -13,6 +13,7 @@ namespace Data.Arcoline.Entidades
         public string FullDescription { get; set; }
         public bool Status { get; set; }
         public DateTime Created_at { get; set; }
+        public string Img { get; set; }
         public Guid IdCategory { get; set; }
         [ForeignKey("IdCategory")]
         public Category Category { get; set; }

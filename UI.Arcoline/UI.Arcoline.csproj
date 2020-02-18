@@ -317,7 +317,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets\Storage\NoticesIMG\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fonts\fontawesome\fa-brands-400.eot" />
     <Content Include="Assets\fonts\fontawesome\fa-brands-400.ttf" />
@@ -338,18 +340,6 @@
     <Content Include="Assets\site\assets\RobotoCondensed-Bold.ttf" />
     <Content Include="Assets\site\assets\RobotoCondensed-Light.ttf" />
     <Content Include="Assets\site\assets\RobotoCondensed-Regular.ttf" />
-    <Content Include="Assets\Storage\CV\CV190332600.pdf" />
-    <Content Include="Assets\Storage\CV\CV201742969.pdf" />
-    <Content Include="Assets\Storage\CV\CV202052851.pdf" />
-    <Content Include="Assets\Storage\CV\CV202333911.pdf" />
-    <Content Include="Assets\Storage\CV\CV202454559.pdf" />
-    <Content Include="Assets\Storage\CV\CV202631042.pdf" />
-    <Content Include="Assets\Storage\CV\CV202740989.pdf" />
-    <Content Include="Assets\Storage\CV\CV203156268.pdf" />
-    <Content Include="Assets\Storage\CV\CV203537604.pdf" />
-    <Content Include="Assets\Storage\CV\CV204545625.pdf" />
-    <Content Include="Assets\Storage\CV\CV205318001.pdf" />
-    <Content Include="Assets\Storage\CV\CV205724022.pdf" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_SideNavigation.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
