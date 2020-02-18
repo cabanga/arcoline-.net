@@ -1,0 +1,92 @@
+﻿@model Data.Arcoline.Entidades.Category
+
+@{
+    ViewBag.Title = "Actualizar Categoria";
+}
+
+<div class="bg-body-light">
+    <div class="content content-full">
+        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+            <h1 class="flex-sm-fill h3 my-2 color-default">@ViewBag.Title</h1>
+
+            <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-alt">
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a class="link-fx" href="@Url.Action("Index","Dashboard")">Inicio</a>
+                    </li>
+
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a class="link-fx" href="@Url.Action("Index","Category")">Categorias</a>
+                    </li>
+                    <li class="breadcrumb-item">Registar categoria</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="block">
+                    <ul class="nav nav-tabs nav-tabs-block align-items-center" data-toggle="tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#btabswo-static-home">...</a>
+                        </li>
+
+                        <li class="nav-item ml-auto">
+                            <div class="block-options pl-3 pr-2">
+                                <button type="submit" value="Create" class="btn-block-option btn-submit">
+                                    <i class="si si-check"></i> Actualizar
+                                </button>
+                                |
+                                <input class="btn-block-option color-red" type="button" onclick="location.href='/Category';" value="Cancelar" />
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="block-content tab-content">
+                        <div class="tab-pane active" id="btabswo-static-home" role="tabpanel">
+                            <br />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.IdCategory)
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Nome ou título da categoria</span>
+                                    </div>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Descrição</span>
+                                    </div>
+                                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Cor da categoria</span>
+                                    </div>
+                                    @Html.EditorFor(model => model.Color, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                    @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+                                </div>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

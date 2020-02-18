@@ -52,7 +52,7 @@ namespace UI.Arcoline.Controllers
         public ActionResult Edit(Guid id)
         {
             var response = _category.GetCategory(id);
-            return View(response);
+            return View(response.Objeto);
         }
 
         [HttpPost]
