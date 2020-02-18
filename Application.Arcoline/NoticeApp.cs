@@ -1,18 +1,19 @@
-﻿using Data.Arcoline.Entidades;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using Data.Arcoline.Entidades;
 
 namespace Application.Arcoline
 {
-    public class CategoryApp : App
+    public class NoticeApp : App
     {
-        public AppResult GetCategories()
+        public AppResult GetNotices()
         {
             var result = new AppResult();
             try
             {
-                var response = db.Categories.Include(x => x.Notices).ToList();
+                var response = db.Notices.Include(x => x.Category).ToList();
                 return result.Good(response);
             }
             catch (Exception e)
@@ -22,13 +23,13 @@ namespace Application.Arcoline
             }
         }
 
-        public AppResult GetCategory(Guid ParamId)
+        public AppResult GetNotice(Guid ParamId)
         {
             var res = new AppResult();
             try
             {
-                var resposne = db.Categories.Include(x => x.Notices).FirstOrDefault(x => x.IdCategory == ParamId);
-                return res.Good(resposne);
+                var response = db.Notices.Include(x => x.Category).FirstOrDefault(x => x.IdNotice == ParamId);
+                return res.Good(response);
             }
             catch (Exception e)
             {
@@ -36,22 +37,25 @@ namespace Application.Arcoline
             }
         }
 
-        public AppResult CreateCategory(Category new_object)
+        public AppResult CreateNotice(Notice new_object)
         {
             var result = new AppResult();
             try
             {
-                Category _category = new Category
+                Notice _notice = new Notice
                 {
-                    IdCategory  = Guid.NewGuid(),
-                    Name        = new_object.Name,
-                    Description = new_object.Description,
-                    Color       = new_object.Color,
+                    IdNotice        = Guid.NewGuid(),
+                    Title           = new_object.Title,
+                    Content         = new_object.Content,
+                    Description     = new_object.Description,
+                    Status          = new_object.Status,
+                    Created_at      = DateTime.Now,
+                    IdCategory      = new_object.IdCategory,
                 };
-                var response = db.Categories.Add(_category);
+                var response = db.Notices.Add(_notice);
                 db.SaveChanges();
-                string msg = "Categoria cadastrada com sucesso";
-                return result.Good(msg, _category);
+                string msg = "Noticia publicada com sucesso";
+                return result.Good(msg, _notice);
             }
             catch (Exception e)
             {
@@ -60,20 +64,24 @@ namespace Application.Arcoline
             }
         }
 
-        public AppResult UpdateCategory(Guid ParamId, Category edit_object)
+        public AppResult UpdateNotice(Guid ParamId, Notice edit_object)
         {
             var result = new AppResult();
             try
             {
-                var response = db.Categories.FirstOrDefault(x => x.IdCategory == ParamId);
+                var response = db.Notices.FirstOrDefault(x => x.IdNotice == ParamId);
+
                 if (response != null)
                 {
-                    response.Name = edit_object.Name;
+                    response.Title = edit_object.Title;
+                    response.Content = edit_object.Content;
                     response.Description = edit_object.Description;
-                    response.Color = edit_object.Color;
+                    response.Status = edit_object.Status;
+                    response.IdCategory = edit_object.IdCategory;
+
                     db.SaveChanges();
                 }
-                string msg = "Categoria Actualizada com sucesso";
+                string msg = "Noticia Actualizada com sucesso";
                 return result.Good(msg, response);
             }
             catch (Exception e)
@@ -82,18 +90,18 @@ namespace Application.Arcoline
             }
         }
 
-        public AppResult DeleteCategory(Guid ParamId)
+        public AppResult DeleteNotice(Guid ParamId)
         {
             var result = new AppResult();
             try
             {
-                var response = db.Categories.FirstOrDefault(x => x.IdCategory == ParamId);
+                var response = db.Notices.FirstOrDefault(x => x.IdNotice == ParamId);
                 if (response != null)
                 {
-                    db.Categories.Remove(response);
+                    db.Notices.Remove(response);
                     db.SaveChanges();
                 }
-                var msg = "Categoria removida com sucesso";
+                var msg = "Noticia removida com sucesso";
                 return result.Good(msg);
             }
             catch (Exception e)
@@ -101,7 +109,6 @@ namespace Application.Arcoline
                 return result.Bad("Erro ao procesar operação, tente novamente. " + e);
             }
         }
-
 
     }
 }

@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="CategoryApp.cs" />
+    <Compile Include="NoticeApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
