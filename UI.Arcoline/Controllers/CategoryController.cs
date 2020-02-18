@@ -7,11 +7,11 @@ namespace UI.Arcoline.Controllers
 {
     public class CategoryController : Controller
     {
-        private CategoryApp _category;
+        private CategoryApp _category = new CategoryApp();
         public ActionResult Index()
         {
             var response = _category.GetCategories();
-            return View(response);
+            return View(response.Objeto);
         }
 
         public ActionResult Details(Guid id)

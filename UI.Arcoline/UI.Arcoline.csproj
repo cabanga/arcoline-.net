@@ -315,9 +315,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Category\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\fonts\fontawesome\fa-brands-400.eot" />
     <Content Include="Assets\fonts\fontawesome\fa-brands-400.ttf" />
@@ -353,6 +351,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_SideNavigation.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Arcoline\Application.Arcoline.csproj">

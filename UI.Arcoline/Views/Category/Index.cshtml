@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Data.Arcoline.Entidades.Category>
+
+@{
+    ViewBag.Title = "Categorias";
+}
+
+<div class="content content-full">
+    <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+        <a href="@Url.Action("Create","Category")" class="btn btn-sm btn-default push h3 my-2">
+            <i class="fa fa-plus mr-1"></i>
+            Adicionar
+        </a>
+
+        <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-alt">
+                <li class="breadcrumb-item" aria-current="page">
+                    <a class="link-fx" href="@Url.Action("Index","Dashboard")">Inicio</a>
+                </li>
+                <li class="breadcrumb-item">Categorias</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="content">
+
+    <div class="row">
+        @foreach (var category in Model)
+        {
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-link-pop text-center border-default" href="@Url.Action("Details","Category", new { id = category.IdCategory})">
+                    <div class="block-header">
+                        <h3 class="block-title">@category.Name</h3>
+                    </div>
+                    <div class="block-content bg-default">
+                        <div class="py-2">
+                            <p class="h1 font-w700 text-white mb-2">45</p>
+                            <p class="h6 text-white-75">Noticias</p>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-full bg-body-light">
+                        <span class="btn btn-square btn-default px-4">
+                            <i class="fa fa-eye mr-1"></i>Ver categoria
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+        }
+    </div>
+
+</div>
+<!-- END Page Content -->
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdCategory }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdCategory }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdCategory })
+            </td>
+        </tr>
+    }
+
+</table>

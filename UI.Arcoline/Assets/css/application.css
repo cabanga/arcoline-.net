@@ -11,3 +11,22 @@
 .sidebar-dark #sidebar .nav-main-link > .nav-main-link-icon {
     color: #ff0044 !important;
 }
+
+.bg-default {
+    background-color: #ff0044 !important;
+    color: #fff !important;
+}
+
+.btn-default {
+    background-color: #ff0044 !important;
+    color: #fff !important;
+    border-radius: 0;
+}
+
+.content.content-full {
+    border-top: 2px solid #ff0044;
+}
+
+a.link-fx {
+    color: #f04;
+}
