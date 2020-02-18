@@ -25,7 +25,7 @@ namespace Data.Arcoline
         }
 
 
-        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
 
     }

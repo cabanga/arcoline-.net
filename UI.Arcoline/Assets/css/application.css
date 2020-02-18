@@ -1,0 +1,13 @@
+
+#page-container.sidebar-dark #sidebar {
+    background-color: #d5dce3;
+    color: #ffffff;
+}
+
+.sidebar-dark #sidebar .nav-main-link {
+    color: #ff0044 !important;
+}
+
+.sidebar-dark #sidebar .nav-main-link > .nav-main-link-icon {
+    color: #ff0044 !important;
+}

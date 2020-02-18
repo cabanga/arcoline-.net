@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Data.Arcoline.Entidades
 {
-    public class Categoria
+    public class Category
     {
         [Key]
-        public Guid IdCategoria { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
+        public Guid IdCategory { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Color { get; set; }
     }
 }

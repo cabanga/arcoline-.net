@@ -1,13 +1,83 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - :.Arcoline </title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+    <link href="~/Assets/css/oneui.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/Assets/img/favicon.png" />
+    <link href="~/Assets/css/application.css" rel="stylesheet" />
 </head>
 <body>
+    <!-- Page Container -->
 
-    @RenderBody()
+    <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
+
+        <nav id="sidebar" aria-label="Main Navigation">
+            <div class="content-header bg-white-5" style="padding: 60px 15px;">
+                <a class="font-w600 text-dual" href="@Url.Action("Index","Dashboard")">
+                    <img class="img-fluid" src="~/Assets/img/logotipo.png" style="height: 50px!important;" />
+                </a>
+            </div>
+            @Html.Partial("_SideNavigation")
+        </nav>
+
+        <header id="page-header">
+            <button type="button" class="btn btn-sm btn-dual mr-2 d-none d-lg-inline-block" data-toggle="layout" data-action="sidebar_mini_toggle" style="position: absolute; margin: 15px 1.875rem;">
+                <i class="fa fa-fw fa-ellipsis-v"></i>
+            </button>
+        </header>
+
+        <main id="main-container">
+            <div class="">
+                @RenderBody()
+            </div>
+        </main>
+
+    </div>
+
+    <script src="~/Assets/js/oneui.core.min.js"></script>
+    <script src="~/Assets/js/oneui.app.min.js"></script>
+
+    <script src="~/Assets/js/notify/UI.v4.min.js"></script>
+    <script src="~/Assets/js/jquery.simpleTableSort.js"></script>
+    <script src="~/Assets/js/Application.js"></script>
+
+
+    <!-- ================================================================== -->
+
+    @if (TempData["Erro"] != null)
+    {
+        <script>
+            MsgErro('@(TempData["Erro"].ToString())');
+        </script>
+    }
+
+    @if (TempData["Ok"] != null)
+    {
+        <script>
+            MsgOk('@(TempData["Ok"].ToString())');
+        </script>
+    }
+
+    @if (TempData["Alert"] != null)
+    {
+        <script>
+            MsgAlert('@(TempData["Alert"].ToString())');
+        </script>
+    }
+
+    @if (TempData["Info"] != null)
+    {
+        <script>
+            MsgInfo('@(TempData["Info"].ToString())');
+        </script>
+    }
+
+    <!-- ================================================================== -->
 
 </body>
 </html>
+

@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\Category.cs" />
     <Compile Include="Migrations\202002171742555_init-migration.cs" />
     <Compile Include="Migrations\202002171742555_init-migration.designer.cs">
       <DependentUpon>202002171742555_init-migration.cs</DependentUpon>

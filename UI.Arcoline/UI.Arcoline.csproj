@@ -168,6 +168,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,6 +182,102 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\application.css" />
+    <Content Include="Assets\css\oneui.css" />
+    <Content Include="Assets\css\oneui.min.css" />
+    <Content Include="Assets\css\themes\amethyst.css" />
+    <Content Include="Assets\css\themes\amethyst.min.css" />
+    <Content Include="Assets\css\themes\city.css" />
+    <Content Include="Assets\css\themes\city.min.css" />
+    <Content Include="Assets\css\themes\flat.css" />
+    <Content Include="Assets\css\themes\flat.min.css" />
+    <Content Include="Assets\css\themes\modern.css" />
+    <Content Include="Assets\css\themes\modern.min.css" />
+    <Content Include="Assets\css\themes\smooth.css" />
+    <Content Include="Assets\css\themes\smooth.min.css" />
+    <Content Include="Assets\datepicker\bootstrap-datepicker.css" />
+    <Content Include="Assets\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Assets\datepicker\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Assets\fonts\fontawesome\fa-brands-400.svg" />
+    <Content Include="Assets\fonts\fontawesome\fa-regular-400.svg" />
+    <Content Include="Assets\fonts\fontawesome\fa-solid-900.svg" />
+    <Content Include="Assets\fonts\simple-line-icons\Simple-Line-Icons.svg" />
+    <Content Include="Assets\img\avatar.jpg" />
+    <Content Include="Assets\img\banner.jpg" />
+    <Content Include="Assets\img\favicon.png" />
+    <Content Include="Assets\img\logotipo.png" />
+    <Content Include="Assets\js\Application.js" />
+    <Content Include="Assets\js\chart-data.js" />
+    <Content Include="Assets\js\chart-js.js" />
+    <Content Include="Assets\js\core\bootstrap.bundle.min.js" />
+    <Content Include="Assets\js\core\jquery-scrollLock.min.js" />
+    <Content Include="Assets\js\core\jquery.appear.min.js" />
+    <Content Include="Assets\js\core\jquery.min.js" />
+    <Content Include="Assets\js\core\js.cookie.min.js" />
+    <Content Include="Assets\js\core\simplebar.min.js" />
+    <Content Include="Assets\js\jquery.simpleTableSort.js" />
+    <Content Include="Assets\js\notify\UI.v4.min.js" />
+    <Content Include="Assets\js\oneui.app.min.js" />
+    <Content Include="Assets\js\oneui.core.min.js" />
+    <Content Include="Assets\js\validateForm.js" />
+    <Content Include="Assets\site\assets\arrow_left.png" />
+    <Content Include="Assets\site\assets\arrow_right.png" />
+    <Content Include="Assets\site\assets\background.jpg" />
+    <Content Include="Assets\site\assets\bg1.jpg" />
+    <Content Include="Assets\site\assets\bg2.jpg" />
+    <Content Include="Assets\site\assets\bg3.png" />
+    <Content Include="Assets\site\assets\bg4.png" />
+    <Content Include="Assets\site\assets\bg5.jpg" />
+    <Content Include="Assets\site\assets\bg6.png" />
+    <Content Include="Assets\site\assets\bg6_V5.jpg" />
+    <Content Include="Assets\site\assets\bg7.png" />
+    <Content Include="Assets\site\assets\Caminho 704.png" />
+    <Content Include="Assets\site\assets\cetim logo.png" />
+    <Content Include="Assets\site\assets\cetim_rede_social.png" />
+    <Content Include="Assets\site\assets\fb.png" />
+    <Content Include="Assets\site\assets\Grupo 5.png" />
+    <Content Include="Assets\site\assets\Grupo 69.png" />
+    <Content Include="Assets\site\assets\Grupo 72.png" />
+    <Content Include="Assets\site\assets\Grupo 73.png" />
+    <Content Include="Assets\site\assets\Grupo 74.png" />
+    <Content Include="Assets\site\assets\Grupo 88.png" />
+    <Content Include="Assets\site\assets\in.png" />
+    <Content Include="Assets\site\assets\logo_Cetim_BLK.png" />
+    <Content Include="Assets\site\assets\pt.png" />
+    <Content Include="Assets\site\assets\service_icon2.png" />
+    <Content Include="Assets\site\assets\service_icon3.png" />
+    <Content Include="Assets\site\assets\service_icon4.png" />
+    <Content Include="Assets\site\assets\service_icon5.png" />
+    <Content Include="Assets\site\assets\service_icon6.png" />
+    <Content Include="Assets\site\assets\success.png" />
+    <Content Include="Assets\site\assets\upload.png" />
+    <Content Include="Assets\site\css\animations.css" />
+    <Content Include="Assets\site\css\bootstrap.css" />
+    <Content Include="Assets\site\css\coroussel.css" />
+    <Content Include="Assets\site\css\main.css" />
+    <Content Include="Assets\site\css\particles.css" />
+    <Content Include="Assets\site\css\slide.css" />
+    <Content Include="Assets\site\css\style.css" />
+    <Content Include="Assets\site\css\styleSite.css" />
+    <Content Include="Assets\site\css\swipper.css" />
+    <Content Include="Assets\site\js\Access_token.js" />
+    <Content Include="Assets\site\js\bootstrap.js" />
+    <Content Include="Assets\site\js\getFacebook.js" />
+    <Content Include="Assets\site\js\getFacebookPost.js" />
+    <Content Include="Assets\site\js\jquery.js" />
+    <Content Include="Assets\site\js\jr-slide.js" />
+    <Content Include="Assets\site\js\main.js" />
+    <Content Include="Assets\site\js\particles.js" />
+    <Content Include="Assets\site\js\particles_main.js" />
+    <Content Include="Assets\site\js\popper.js" />
+    <Content Include="Assets\site\js\scroll.js" />
+    <Content Include="Assets\site\js\Scroll_behavior.js" />
+    <Content Include="Assets\site\js\slide_bootstrap.js" />
+    <Content Include="Assets\site\js\spa.js" />
+    <Content Include="Assets\site\js\swipper.js" />
+    <Content Include="Assets\site\js\tab.js" />
+    <Content Include="Assets\site\js\translate.js" />
+    <Content Include="Assets\site\js\util.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -217,9 +315,54 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Views\Category\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\fonts\fontawesome\fa-brands-400.eot" />
+    <Content Include="Assets\fonts\fontawesome\fa-brands-400.ttf" />
+    <Content Include="Assets\fonts\fontawesome\fa-brands-400.woff" />
+    <Content Include="Assets\fonts\fontawesome\fa-brands-400.woff2" />
+    <Content Include="Assets\fonts\fontawesome\fa-regular-400.eot" />
+    <Content Include="Assets\fonts\fontawesome\fa-regular-400.ttf" />
+    <Content Include="Assets\fonts\fontawesome\fa-regular-400.woff" />
+    <Content Include="Assets\fonts\fontawesome\fa-regular-400.woff2" />
+    <Content Include="Assets\fonts\fontawesome\fa-solid-900.eot" />
+    <Content Include="Assets\fonts\fontawesome\fa-solid-900.ttf" />
+    <Content Include="Assets\fonts\fontawesome\fa-solid-900.woff" />
+    <Content Include="Assets\fonts\fontawesome\fa-solid-900.woff2" />
+    <Content Include="Assets\fonts\simple-line-icons\Simple-Line-Icons.eot" />
+    <Content Include="Assets\fonts\simple-line-icons\Simple-Line-Icons.ttf" />
+    <Content Include="Assets\fonts\simple-line-icons\Simple-Line-Icons.woff" />
+    <Content Include="Assets\fonts\simple-line-icons\Simple-Line-Icons.woff2" />
+    <Content Include="Assets\site\assets\RobotoCondensed-Bold.ttf" />
+    <Content Include="Assets\site\assets\RobotoCondensed-Light.ttf" />
+    <Content Include="Assets\site\assets\RobotoCondensed-Regular.ttf" />
+    <Content Include="Assets\Storage\CV\CV190332600.pdf" />
+    <Content Include="Assets\Storage\CV\CV201742969.pdf" />
+    <Content Include="Assets\Storage\CV\CV202052851.pdf" />
+    <Content Include="Assets\Storage\CV\CV202333911.pdf" />
+    <Content Include="Assets\Storage\CV\CV202454559.pdf" />
+    <Content Include="Assets\Storage\CV\CV202631042.pdf" />
+    <Content Include="Assets\Storage\CV\CV202740989.pdf" />
+    <Content Include="Assets\Storage\CV\CV203156268.pdf" />
+    <Content Include="Assets\Storage\CV\CV203537604.pdf" />
+    <Content Include="Assets\Storage\CV\CV204545625.pdf" />
+    <Content Include="Assets\Storage\CV\CV205318001.pdf" />
+    <Content Include="Assets\Storage\CV\CV205724022.pdf" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\_SideNavigation.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Arcoline\Application.Arcoline.csproj">
+      <Project>{5C2B715D-F416-4F4B-8B8B-1BD2AE63774F}</Project>
+      <Name>Application.Arcoline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.Arcoline\Data.Arcoline.csproj">
+      <Project>{1F0CD0FA-A61E-4EEC-A022-9C266B1BC164}</Project>
+      <Name>Data.Arcoline</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
