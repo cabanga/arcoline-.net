@@ -110,5 +110,10 @@ namespace Application.Arcoline
             }
         }
 
+        public List<Category> CategoryCollection()
+        {
+            var response = db.Categories.ToList();
+            return response;
+        }
     }
 }
