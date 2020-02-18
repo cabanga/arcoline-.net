@@ -34,3 +34,20 @@ a.link-fx {
 .bg-item {
     color: #fff !important;
 }
+
+.color-default {
+    color: #ff0044 !important;
+}
+
+.btn-submit {
+    background-color: #00b94e;
+    margin: 0;
+    padding: 10px 12px;
+    color: #fff;
+}
+
+.btn-submit:hover {
+    text-decoration: none;
+    color: #e6e6e6;
+    box-shadow: 0 0.5rem 2.5rem #e6e6e6;
+}
