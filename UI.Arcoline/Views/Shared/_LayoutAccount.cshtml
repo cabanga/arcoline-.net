@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>@ViewBag.Title ::. Arcoline</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+    <link href="~/Assets/css/oneui.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="~/favicon.png" />
+    <link href="~/Assets/css/application.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="page-container">
+        <main id="main-container">
+
+            <div class="hero-static d-flex align-items-center">
+                <div class="w-100">
+                    <div class="content content-full bg-white">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 col-md-6 col-lg-3 py-4">
+                                <!-- Header -->
+                                <div class="text-center">
+                                    <img src="~/Assets/img/logo.png" style="width: 200px;" />
+                                </div>
+                                <br />
+                                <br />
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                    <div class="font-size-sm text-center text-muted py-3">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="~/Assets/js/oneui.core.min.js"></script>
+    <script src="~/Assets/js/oneui.app.min.js"></script>
+</body>
+</html>

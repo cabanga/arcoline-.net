@@ -292,7 +292,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutSite.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -350,6 +350,8 @@
     <Content Include="Views\Notice\Index.cshtml" />
     <Content Include="Views\Notice\Details.cshtml" />
     <Content Include="Views\Notice\Create.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Arcoline\Application.Arcoline.csproj">
