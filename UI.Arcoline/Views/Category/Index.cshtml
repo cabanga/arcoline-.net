@@ -35,8 +35,15 @@
                     </div>
                     <div class="block-content bg-item" style="background-color: @category.Color !important;">
                         <div class="py-2">
-                            <p class="h1 font-w700 text-white mb-2">45</p>
-                            <p class="h6 text-white-75">Noticias</p>
+                            <p class="h1 font-w700 text-white mb-2">@category.Notices.Count()</p>
+                            @if (category.Notices.Count() <= 1)
+                            {
+                                <p class="h6 text-white-75">Noticia</p>
+                            }
+                            else
+                            {
+                                <p class="h6 text-white-75">Noticias</p>
+                            }
                         </div>
                     </div>
                     <div class="block-content block-content-full bg-body-light">
