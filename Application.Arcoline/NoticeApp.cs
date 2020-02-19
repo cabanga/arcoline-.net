@@ -13,7 +13,7 @@ namespace Application.Arcoline
             var result = new AppResult();
             try
             {
-                var response = db.Notices.Include(x => x.Category).ToList();
+                var response = db.Notices.Include(x => x.Category).ToList().OrderByDescending(d => Convert.ToDateTime(d.Created_at));
                 return result.Good(response);
             }
             catch (Exception e)

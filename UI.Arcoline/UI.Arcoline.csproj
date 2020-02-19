@@ -185,6 +185,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\site.css" />
     <Content Include="Assets\css\application.css" />
     <Content Include="Assets\css\oneui.css" />
     <Content Include="Assets\css\oneui.min.css" />
@@ -207,7 +208,13 @@
     <Content Include="Assets\fonts\simple-line-icons\Simple-Line-Icons.svg" />
     <Content Include="Assets\img\avatar.jpg" />
     <Content Include="Assets\img\banner.jpg" />
-    <Content Include="Assets\img\favicon.png" />
+    <Content Include="Assets\img\desc\desc1.png" />
+    <Content Include="Assets\img\desc\desc2.png" />
+    <Content Include="Assets\img\desc\desc3.png" />
+    <Content Include="Assets\img\desc\desc4.png" />
+    <Content Include="Assets\img\desc\desc5.png" />
+    <Content Include="Assets\img\desc\desc6.png" />
+    <Content Include="Assets\img\desc\desc7.png" />
     <Content Include="Assets\img\logotipo.png" />
     <Content Include="Assets\js\Application.js" />
     <Content Include="Assets\js\chart-data.js" />

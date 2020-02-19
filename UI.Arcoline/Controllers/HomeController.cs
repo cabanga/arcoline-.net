@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Arcoline;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,11 @@ namespace UI.Arcoline.Controllers
 {
     public class HomeController : Controller
     {
+        private NoticeApp _notice = new NoticeApp();
         public ActionResult Index()
         {
+            var response = _notice.GetNotices();
+            ViewBag.Noticies = response.Objeto;
             return View();
         }
 

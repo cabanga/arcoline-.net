@@ -1,0 +1,119 @@
+.color-default {
+    color: #ff0044 !important;
+}
+
+.bg-default {
+    background-color: #ff0044 !important;
+}
+
+.navbar-inverse {
+    background-color: #ffffff !important;
+    border-color: #ff0044 !important;
+}
+
+.nav-link {
+    color: #ff0044 !important;
+}
+
+.nav-item.active {
+    color: #fff !important;
+    background-color: #ff0044;
+}
+
+    .nav-item.active > .nav-link {
+        color: #fff !important;
+    }
+
+.hr-line {
+    border: 0;
+    border-top: 20px solid #ff0044 !important;
+    margin: 0 !important;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.no-m {
+    margin: 0 !important;
+}
+
+.category-text {
+    position: absolute;
+    padding: 10px 25px;
+    font-style: italic;
+    font-weight: 500;
+    margin: 15px;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(63, 63, 63, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(63, 63, 63, 0.75);
+    box-shadow: 5px 5px 5px 0px rgba(63, 63, 63, 0.75);
+}
+
+.category-desc {
+    bottom: 0;
+    width: 50%;
+    position: absolute;
+    padding: 10px 25px;
+    font-style: italic;
+    font-weight: 500;
+    margin: 15px;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(63, 63, 63, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(63, 63, 63, 0.75);
+    box-shadow: 5px 5px 5px 0px rgba(63, 63, 63, 0.75);
+}
+
+.red-line {
+    background-color: #ff0044a8 !important;
+    color: #fff !important;
+}
+
+.white-line {
+    background-color: #fff !important;
+    color: #ff0044a8 !important;
+}
+
+.reed-line {
+    background-color: darkred !important;
+    color: #fff !important;
+}
+
+.roxo-line {
+    background-color: #993399 !important;
+    color: #fff !important;
+}
+
+.orange-line {
+    background-color: orange !important;
+    color: #fff !important;
+}
+
+.green-line {
+    background-color: #12d900 !important;
+    color: #fff !important;
+}
+
+.red-desc {
+    background-color: #ff0044a8 !important;
+    color: #fff !important;
+}
+
+.reed-desc {
+    background-color: #8b0000c2 !important;
+    color: #fff !important;
+}
+
+.roxo-desc {
+    background-color: #993399c7 !important;
+    color: #fff !important;
+}
+
+.orange-desc {
+    background-color: #ffa500d4 !important;
+    color: #fff !important;
+}
+
+.green-desc {
+    background-color: #12d900cf !important;
+    color: #fff !important;
+}
