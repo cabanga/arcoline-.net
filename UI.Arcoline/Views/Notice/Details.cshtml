@@ -71,72 +71,40 @@
                 <div class="block-content tab-content" style="min-height: calc(100vh - 410px);">
                     <div class="tab-pane active" id="btabswo-static-home" role="tabpanel">
 
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12">
+                                <p class="cetim-label">Titulo:</p>
+                                <p class="font-weight-light">@Model.Title</p>
 
+                                <p class="cetim-label">Titulo destque:</p>
+                                <p class="font-weight-light">@Model.Content</p>
 
+                                <p class="cetim-label">Data da publicação:</p>
+                                <p class="font-weight-light">@Model.Created_at.ToString("dd/MM/yyyy")</p>
 
+                                <p class="cetim-label">Categoria:</p>
+                                <p class="font-weight-light">@Model.Category.Name</p>
 
-                        <dl class="dl-horizontal">
-                            <dt>
-                                @Html.DisplayNameFor(model => model.Title)
-                            </dt>
+                                <p class="cetim-label">Estado da noticia:</p>
+                                <p class="font-weight-light">
+                                    @if (Model.Status)
+                                    {
+                                        <span class="badge badge-pill badge-success p-2">Activa</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge badge-pill badge-warning p-2">Inactiva</span>
+                                    }
+                                </p>
 
-                            <dd>
-                                @Html.DisplayFor(model => model.Title)
-                            </dd>
+                            </div>
 
-                            <dt>
-                                @Html.DisplayNameFor(model => model.Content)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Content)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.FullDescription)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.FullDescription)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.Status)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Status)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.Created_at)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Created_at)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.Img)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.Img)
-                            </dd>
-
-                            <dt>
-                                @Html.DisplayNameFor(model => model.IdCategory)
-                            </dt>
-
-                            <dd>
-                                @Html.DisplayFor(model => model.IdCategory)
-                            </dd>
-
-                        </dl>
-
-
-
-
+                            <div class="col-lg-6 col-sm-12">
+                                <div class="font-weight-light">
+                                    @Model.FullDescription
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

@@ -51,3 +51,8 @@ a.link-fx {
     color: #e6e6e6;
     box-shadow: 0 0.5rem 2.5rem #e6e6e6;
 }
+
+.cetim-label {
+    margin: 0 !important;
+    font-weight: 700;
+}
