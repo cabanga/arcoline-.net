@@ -4,60 +4,51 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="content content-full">
+    <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+        <a href="@Url.Action("Create","Notice")" class="btn btn-sm btn-default push h3 my-2">
+            <i class="fa fa-plus mr-1"></i>
+            Adicionar
+        </a>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Created_at)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdCategory)
-        </th>
-        <th></th>
-    </tr>
+        <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-alt">
+                <li class="breadcrumb-item" aria-current="page">
+                    <a class="link-fx" href="@Url.Action("Index","Dashboard")">Inicio</a>
+                </li>
+                <li class="breadcrumb-item">Noticias</li>
+            </ol>
+        </nav>
+    </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Created_at)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdCategory)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdNotice }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdNotice }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdNotice })
-        </td>
-    </tr>
-}
+<!-- Page Content -->
+<div class="content">
 
-</table>
+    <div class="row">
+        @foreach (var notice in Model)
+        {
+            <div class="col-md-6 col-xl-3">
+                <a class="block block-link-pop text-center border-default" href="@Url.Action("Details","Notice", new { id = notice.IdNotice})">
+                    <div class="block-header">
+                        <h3 class="block-title">@notice.Title</h3>
+                    </div>
+                    <div class="block-content bg-item" style="background-color: @notice.Category.Color !important;">
+                        <div class="py-2">
+                            <p class="h1 font-w700 text-white mb-2">@notice.Created_at.ToString("dd/MM/yyyy")</p>
+                            <p class="h6 text-white-75">Noticias</p>
+                        </div>
+                    </div>
+                    <div class="block-content block-content-full bg-body-light">
+                        <span class="btn btn-square btn-item px-4" style="color: #fff!important; background-color: @notice.Category.Color !important;">
+                            <i class="fa fa-eye mr-1"></i>Ver noticia
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+        }
+    </div>
+
+</div>
+<!-- END Page Content -->
