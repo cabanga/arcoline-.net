@@ -348,6 +348,7 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Notice\Index.cshtml" />
+    <Content Include="Views\Notice\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Arcoline\Application.Arcoline.csproj">
