@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 namespace UI.Arcoline.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : BaseController
     {
         private CategoryApp _category = new CategoryApp();
         public ActionResult Index()

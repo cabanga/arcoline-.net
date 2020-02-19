@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace UI.Arcoline.Controllers
 {
-    public class NoticeController : Controller
+    public class NoticeController : BaseController
     {
         private NoticeApp _notice = new NoticeApp();
 
