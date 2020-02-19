@@ -1,0 +1,117 @@
+﻿@model Data.Arcoline.Entidades.Notice
+
+@{
+    ViewBag.Title = "Publicar noticia";
+}
+
+<div class="bg-body-light">
+    <div class="content content-full">
+        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+            <h1 class="flex-sm-fill h3 my-2 color-default">@ViewBag.Title</h1>
+
+            <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
+                <ol class="breadcrumb breadcrumb-alt">
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a class="link-fx" href="@Url.Action("Index","Dashboard")">Inicio</a>
+                    </li>
+
+                    <li class="breadcrumb-item" aria-current="page">
+                        <a class="link-fx" href="@Url.Action("Index","Notice")">Noticias</a>
+                    </li>
+                    <li class="breadcrumb-item">@ViewBag.Title</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<div class="content">
+    @using (Html.BeginForm("Create", "Notice", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="block">
+                    <ul class="nav nav-tabs nav-tabs-block align-items-center" data-toggle="tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#btabswo-static-home">...</a>
+                        </li>
+
+                        <li class="nav-item ml-auto">
+                            <div class="block-options pl-3 pr-2">
+                                <button type="submit" value="Create" class="btn-block-option btn-submit">
+                                    <i class="si si-check"></i> Adicionar
+                                </button>
+                                |
+                                <input class="btn-block-option color-red" type="button" onclick="location.href='/Notice';" value="Cancelar" />
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="block-content tab-content">
+                        <div class="tab-pane active" id="btabswo-static-home" role="tabpanel">
+                            <br />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Titulo da noticia</span>
+                                            </div>
+                                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Categoria associada</span>
+                                            </div>
+                                            @Html.DropDownList("IdCategory", ViewBag.Categories as SelectList, new { @class = "form-control", required = "required" })
+                                            @Html.ValidationMessageFor(model => model.IdCategory, "", new { @class = "text-danger" })
+                                        </div>
+                                        <br />
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Titule de destque</span>
+                                            </div>
+                                            @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                                            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" data-toggle="custom-file-input" id="upload" name="upload">
+                                            <label class="custom-file-label" for="upload">Escolhe a img</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="FullDescription">Descrição destaque <span class="text-danger">*</span></label>
+                                        @Html.TextAreaFor(model => model.FullDescription, new { @class = "form-control", required = "required", rows = "4" })
+                                        @Html.ValidationMessageFor(model => model.FullDescription, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
