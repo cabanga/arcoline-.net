@@ -280,7 +280,7 @@
     <Content Include="Assets\site\js\tab.js" />
     <Content Include="Assets\site\js\translate.js" />
     <Content Include="Assets\site\js\util.js" />
-    <Content Include="favicon.ico" />
+    <Content Include="favicon.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

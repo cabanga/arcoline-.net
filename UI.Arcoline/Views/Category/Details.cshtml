@@ -60,7 +60,48 @@
                 </ul>
 
                 <div class="block-content tab-content" style="min-height: calc(100vh - 410px);">
-                    <div class="tab-pane active" id="btabswo-static-home" role="tabpanel"></div>
+                    <div class="tab-pane active" id="btabswo-static-home" role="tabpanel">
+                        <table id="bigTable" class="table table-bordered table-striped table-vcenter">
+                            <thead>
+                                <tr>
+                                    <th class="d-none d-sm-table-cell">Titulo</th>
+                                    <th class="d-none d-sm-table-cell">Destaque</th>
+                                    <th class="d-none d-sm-table-cell">Estado</th>
+                                    <th class="d-none d-sm-table-cell">Data emissão</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var notice in Model.Notices)
+                                {
+                                    <tr>
+                                        <td class="font-w600 font-size-sm">
+                                            <a href="@Url.Action("Details","Notice", new { id = notice.IdNotice})">@notice.Title</a>
+                                        </td>
+
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            <em class="text-muted">@notice.Content</em>
+                                        </td>
+
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            @if(notice.Status)
+                                            {
+                                                <span class="badge badge-pill badge-success p-2">Activo</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge badge-pill badge-warning p-2">Inactivo</span>
+                                            }
+                                        </td>
+
+                                        <td class="d-none d-sm-table-cell font-size-sm">
+                                            <span class="text-muted">@notice.Created_at.ToString("dd/MM/yyyy")</span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,6 +169,3 @@
         </div>
     </div>
 </div>
-
-
-<!-- Modal -->
