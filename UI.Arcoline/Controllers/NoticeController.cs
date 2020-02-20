@@ -77,10 +77,24 @@ namespace UI.Arcoline.Controllers
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult Edit(Guid id, Notice editObject)
+        public ActionResult Edit(Guid id, Notice editObject, HttpPostedFileBase upload)
         {
             try
             {
+                if (upload != null)
+                {
+                    var res = _notice.GetNotice(id);
+                    var notice_before_updated = (Notice)res.Objeto;
+
+                    var pathImg = HttpContext.Server.MapPath("~/Assets/Storage/NoticesIMG/") + notice_before_updated.Img;
+                    ArcolineHelper.DeleteFile(pathImg);
+
+                    var extension = Path.GetExtension(upload.FileName);
+                    var cvName = "NOTICE" + DateTime.Now.ToString("yymmssfff") + extension;
+                    upload.SaveAs(HttpContext.Server.MapPath("~/Assets/Storage/NoticesIMG/") + cvName);
+                    editObject.Img = cvName;
+                }
+
                 ViewBag.Categories = new SelectList(_notice.CategoryCollection(), "IdCategory", "Name");
                 var response = _notice.UpdateNotice(id, editObject);
                 var notice = (Notice)response.Objeto;
@@ -107,13 +121,11 @@ namespace UI.Arcoline.Controllers
             try
             {
                 var res = _notice.GetNotice(id);
-
                 var notice = (Notice)res.Objeto;
                 var IdCategory = notice.IdCategory;
                 var response = _notice.DeleteNotice(id);
 
                 var pathImg = HttpContext.Server.MapPath("~/Assets/Storage/NoticesIMG/") + notice.Img;
-
                 ArcolineHelper.DeleteFile(pathImg);
 
                 if (response.Exito)
