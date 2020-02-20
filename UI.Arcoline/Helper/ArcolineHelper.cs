@@ -58,5 +58,16 @@ namespace UI.Arcoline.Helper
 
             return sanitized;
         }
+
+        public static bool DeleteFile(string pathImg)
+        {
+            if (System.IO.File.Exists(pathImg))
+            {
+                System.IO.File.Delete(pathImg);
+                return true;
+            }
+            
+            return false;
+        }
     }
 }

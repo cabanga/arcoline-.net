@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using UI.Arcoline.Helper;
 
 namespace UI.Arcoline.Controllers
 {
@@ -111,15 +112,9 @@ namespace UI.Arcoline.Controllers
                 var IdCategory = notice.IdCategory;
                 var response = _notice.DeleteNotice(id);
 
-                if (!(String.IsNullOrEmpty(notice.Img)))
-                {
-                    var f = HttpContext.Server.MapPath("~/Assets/Storage/NoticesIMG/") + notice.Img;
-                    if (System.IO.File.Exists(f))
-                    {
-                        System.IO.File.Delete(f);
-                    }
-                }
-            
+                var pathImg = HttpContext.Server.MapPath("~/Assets/Storage/NoticesIMG/") + notice.Img;
+
+                ArcolineHelper.DeleteFile(pathImg);
 
                 if (response.Exito)
                 {
