@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.9.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\packages\AngleSharp.0.9.11\lib\net45\AngleSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlSanitizer.4.0.217\lib\net45\HtmlSanitizer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -288,6 +294,8 @@
     <Content Include="Assets\site\js\tab.js" />
     <Content Include="Assets\site\js\translate.js" />
     <Content Include="Assets\site\js\util.js" />
+    <Content Include="Assets\summernote\summernote.min.css" />
+    <Content Include="Assets\summernote\summernote.min.js" />
     <Content Include="favicon.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -327,7 +335,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Storage\NoticesIMG\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fonts\fontawesome\fa-brands-400.eot" />
@@ -361,6 +368,8 @@
     <Content Include="Views\Notice\Create.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutAccount.cshtml" />
+    <None Include="Properties\PublishProfiles\deploy local.pubxml" />
+    <Content Include="Views\Notice\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Application.Arcoline\Application.Arcoline.csproj">

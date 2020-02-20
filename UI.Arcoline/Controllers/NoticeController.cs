@@ -31,6 +31,7 @@ namespace UI.Arcoline.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Create(Notice newObject, HttpPostedFileBase upload)
         {
             if (upload != null)
@@ -74,6 +75,7 @@ namespace UI.Arcoline.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(Guid id, Notice editObject)
         {
             try
@@ -104,9 +106,20 @@ namespace UI.Arcoline.Controllers
             try
             {
                 var res = _notice.GetNotice(id);
+
                 var notice = (Notice)res.Objeto;
                 var IdCategory = notice.IdCategory;
                 var response = _notice.DeleteNotice(id);
+
+                if (!(String.IsNullOrEmpty(notice.Img)))
+                {
+                    var f = HttpContext.Server.MapPath("~/Assets/Storage/NoticesIMG/") + notice.Img;
+                    if (System.IO.File.Exists(f))
+                    {
+                        System.IO.File.Delete(f);
+                    }
+                }
+            
 
                 if (response.Exito)
                 {

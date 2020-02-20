@@ -1,7 +1,8 @@
 ﻿@model Data.Arcoline.Entidades.Notice
 
+
 @{
-    ViewBag.Title = "Publicar noticia";
+    ViewBag.Title = "Actualizar noticia";
 }
 
 <div class="bg-body-light">
@@ -27,7 +28,7 @@
 
 
 <div class="content">
-    @using (Html.BeginForm("Create", "Notice", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    @using (Html.BeginForm("Edit", "Notice", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
         <div class="row">
@@ -41,7 +42,7 @@
                         <li class="nav-item ml-auto">
                             <div class="block-options pl-3 pr-2">
                                 <button type="submit" value="Create" class="btn-block-option btn-submit">
-                                    <i class="si si-check"></i> Adicionar
+                                    <i class="si si-check"></i> Actualizar
                                 </button>
                                 |
                                 <input class="btn-block-option color-red" type="button" onclick="location.href='/Notice';" value="Cancelar" />
@@ -52,6 +53,7 @@
                         <div class="tab-pane active" id="btabswo-static-home" role="tabpanel">
                             <br />
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            @Html.HiddenFor(model => model.IdNotice)
 
                             <div class="row">
                                 <div class="col-6">
@@ -106,7 +108,6 @@
                                     </div>
                                 </div>
                             </div>
-
 
                         </div>
                     </div>

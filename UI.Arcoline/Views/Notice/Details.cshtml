@@ -37,7 +37,6 @@
     </div>
 </div>
 
-
 <div class="content content-full-default">
     <div class="d-flex flex-column flex-sm-row">
         <a href="@Url.Action("Edit","Notice", new { id = Model.IdNotice })" class="btn btn-sm btn-default push h3 my-2" style="background-color: @Model.Category.Color!important">
@@ -100,8 +99,8 @@
                             </div>
 
                             <div class="col-lg-6 col-sm-12">
-                                <div class="font-weight-light">
-                                    @Model.FullDescription
+                                <div class="">
+                                    @Html.Raw(@HttpUtility.HtmlDecode(ArcolineHelper.SanitizeHtmlDescription(Model.FullDescription)))
                                 </div>
                             </div>
                         </div>

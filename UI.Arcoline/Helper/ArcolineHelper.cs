@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ganss.XSS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -48,6 +49,14 @@ namespace UI.Arcoline.Helper
             "</a>", controller, action, id);
 
             return new HtmlString(response);
+        }
+
+        public static string SanitizeHtmlDescription(string html)
+        {
+            var sanitizer = new HtmlSanitizer();
+            var sanitized = sanitizer.Sanitize(html);
+
+            return sanitized;
         }
     }
 }
